@@ -1,0 +1,36 @@
+
+<ion-content >
+  <div id="cont">
+  
+  <ion-grid>
+      <ion-row>
+       <ion-col size = "10">
+        <ion-input 
+              #input
+              [(ngModel)] = "texto" 
+              (keyup.enter)="adiciona()"
+              placeholder="Informe um item">
+            </ion-input> 
+      </ion-col>
+      <ion-col size = "2" >
+        <ion-button (click) = "adiciona()" size = "small" colors="success">
+          <ion-icon name="save"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-list>
+    <ion-item *ngFor="let item of minhaLista; let i=index">
+      <ion-label>{{item}}</ion-label>
+        <ion-button (click)="remove(i)" color = "danger" size="small">
+        <ion-icon name="trash"></ion-icon> 
+      </ion-button>
+    </ion-item>
+   
+    
+  </ion-list>
+
+
+  </div>
+</ion-content>
